@@ -1,21 +1,35 @@
 {
-  "name": "openapi-query-client",
-  "version": "0.0.0",
-  "type": "module",
-  "sideEffects": false,
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^5.64.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.3"
-  }
+	"name": "openapi-query-client",
+	"version": "0.0.0",
+	"type": "module",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"sideEffects": false,
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"import": "./dist/index.js",
+			"default": "./dist/index.cjs"
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"format": "prettier --write .",
+		"typecheck": "tsc --noEmit",
+		"check-exports": "attw --pack ."
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.64.2",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@arethetypeswrong/cli": "^0.17.3",
+		"@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+		"@types/react": "^19.0.8",
+		"@types/react-dom": "^19.0.3",
+		"prettier": "^3.4.2",
+		"tsup": "^8.3.5",
+		"typescript": "^5.7.3"
+	}
 }

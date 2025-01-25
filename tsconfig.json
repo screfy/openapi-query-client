@@ -1,11 +1,10 @@
 {
 	"compilerOptions": {
 		"moduleResolution": "Bundler",
-		"target": "ESNext",
-		"module": "ESNext",
+		"target": "ES2022",
+		"module": "ES2022",
 		"jsx": "react-jsx",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"resolveJsonModule": true,
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
 		"allowSyntheticDefaultImports": true,
 		"composite": false,
 		"esModuleInterop": false,
@@ -26,5 +25,6 @@
 		"allowJs": false,
 		"allowUnreachableCode": false,
 		"allowUnusedLabels": false
-	}
+	},
+	"include": ["src"]
 }
