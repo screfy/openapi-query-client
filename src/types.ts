@@ -32,7 +32,7 @@ type ProcedureDef<Input = unknown, Result = unknown> = {
 
 export type AllKeys<Paths extends OpenApiPaths> = keyof Paths extends infer K
 	? K extends string
-		? ProcedureKey<K, keyof Paths[K]>
+		? ProcedureKey<K, keyof RemoveEmptyParameters<Paths[K]>>
 		: never
 	: never;
 
