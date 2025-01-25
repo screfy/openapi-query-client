@@ -1,5 +1,6 @@
 {
 	"name": "openapi-query-client",
+	"description": "Integrate your OpenAPI spec with React Query for a fully type-safe experience.",
 	"license": "MIT",
 	"version": "0.0.0",
 	"type": "module",
