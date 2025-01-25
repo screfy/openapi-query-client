@@ -117,7 +117,8 @@ const api = createOpenApiClient<paths, 'application/json; charset=utf-8'>({
 });
 ```
 
-> NOTE: The content type must still represent a JSON format for proper parsing.
+> [!IMPORTANT]
+> The content type must still represent a JSON format for proper parsing.
 
 ## License
 
