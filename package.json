@@ -1,0 +1,21 @@
+{
+  "name": "openapi-query-client",
+  "version": "0.0.0",
+  "type": "module",
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.64.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}
