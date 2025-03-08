@@ -2,7 +2,7 @@
 	"name": "openapi-query-client",
 	"description": "Integrate your OpenAPI spec with React Query for a fully type-safe experience.",
 	"license": "MIT",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"type": "module",
 	"homepage": "https://github.com/screfy/openapi-query-client#readme",
 	"author": "screfy <screfy@pm.me> (https://screfy.com)",
