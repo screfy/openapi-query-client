@@ -3,6 +3,7 @@ import {
 	skipToken,
 	useMutation as useTanStackMutation,
 	useQuery as useTanStackQuery,
+	useSuspenseQuery as useTanStackSuspenseQuery,
 	type InvalidateQueryFilters,
 	type QueryClient,
 	type SkipToken,
@@ -60,6 +61,28 @@ export function createOpenApiClient<
 		});
 	}
 
+	function useSuspenseQuery<
+		Key extends QueryKeys<Paths>,
+		Query extends QueryProcedure<Paths, Key, ContentType>,
+	>(
+		queryKey: Query['input'] extends never
+			? [Key]
+			: [Key, Query['input'] | SkipToken],
+		options?: UseQueryOptions<Query>
+	) {
+		const isDisabled = queryKey[1] === skipToken;
+		const gcTime = options?.gcTime || 0;
+
+		return useTanStackSuspenseQuery({
+			...options,
+			gcTime,
+			queryKey,
+			queryFn: isDisabled
+				? undefined
+				: createQueryFn({ baseUrl, queryKey: queryKey as any, headers }),
+		});
+	}
+
 	function useMutation<
 		Key extends MutationKeys<Paths>,
 		Mutation extends MutationProcedure<Paths, Key, ContentType>,
@@ -102,6 +125,7 @@ export function createOpenApiClient<
 	return {
 		Provider,
 		useQuery,
+		useSuspenseQuery,
 		useMutation,
 		utils: { invalidate, setData, getData },
 	};
